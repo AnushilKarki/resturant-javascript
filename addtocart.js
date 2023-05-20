@@ -1,3 +1,4 @@
+//this item is the menu item 
 const item = [
     {
         id:0,
@@ -127,18 +128,26 @@ let i=0;
 document.getElementById('root').innerHTML = categories.map((product)=>{
 var {title,description,price} = product;
 return (`
-    <div>
-
-${title}
-        ${description}
-        ${price}
-    </div>`+
-    "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"
+    <div class='box'>
+   <div class='img-box'>
+   <img class='images' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg"></img>
+    </div>
+    <div class='bottom'>
+    <p>${title}</p>
+    <h2>${price}.00</h2>
+    `+
+    "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+`</div></div>`
 )
 }).join('')
 
 var cart = [];
-
+function checkout(){
+    // window.localStorage.setItem('cart',JSON.stringify(cart)); 
+    var phone = document.getElementById('phone').value;
+    window.localStorage.setItem('customer_contact',JSON.stringify(phone));
+    window.alert('Thank you for ordering :)');
+    displaycart();
+}
 function addtocart(a){
     // push into cart array
     cart.push(categories[a]);
@@ -146,11 +155,11 @@ function addtocart(a){
 
    //set local storage for cart 
     window.localStorage.setItem('cart',JSON.stringify(cart)); 
-   
     displaycart();
 }
 function clearcart(){
     localStorage.removeItem(cart);
+    localStorage.removeItem(customer_contact);
 }
 function delElement(a){
     //reduce item from cart
@@ -162,6 +171,7 @@ function delElement(a){
 
 function displaycart(a){
     let j=0, total=0;
+    //ckeck if cart is empty or not and apply logic accordingly
     if(cart.length==0){
         document.getElementById('cart').innerHTML='cart is empty';
         document.getElementById('total').innerHTML = "$ "+0+".00";
@@ -172,12 +182,16 @@ function displaycart(a){
             total=total+price;
             document.getElementById("total").innerHTML = "$ "+total+".00";
             return (`
-            <div>
-             ${title}<br/>
-             ${description}<br/>
-             ${price}<br/>`+
-             "<button onclick='delElement("+(j++)+")'>Delete item on cart</button></div>"
+            <div class="cart-item">
+            <div class="row-img">
+              <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
+            </div>
+            <p style='font-size:12px;'>${title}</p>
+            <h2 style='font-size:15px;'>${price}.00</h2>
+            `+
+             "<button onclick='delElement("+(j++)+")' style='width:30%;'>Remove</button></div>"
             )
         }).join('');
     }
+
 }

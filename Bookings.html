@@ -2,6 +2,30 @@
 <html>
   <head>
     <title>Garden Indian Restaurant</title>
+    <style>
+        #formDiv {
+      display:flex;
+      align-items:center;
+      width: 100%;
+      height:50%;
+      justify-content: center;
+      border-radius: 2px;
+      border: 1px solid blue;
+      padding-bottom: 20px;
+    }
+    input {
+      height: 30px;
+      width:150px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+
+    }
+    .footer{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    </style>
   </head>
   <body>
     <h1 align="center">Bookings</h1>
@@ -11,10 +35,10 @@
         <td><a href="About.html">About</a></td>
         <td><a href="LunchMenu.html">Lunch Menu</a></td>
         <td><a href="DinnerMenu.html">Dinner Menu</a></td>
-        <td><a href="TakeAwayMenu.html">Take Away Menu</a></td>
+        <td><a href="menu.html">Take Away Menu</a></td>
         <td><a href="Bookings.html">Bookings</a></td>
         <td><a href="Gallery.html">Gallery</a></td>
-            </tr></table>
+      </tr></table>
     <h2  align="center">Table Bookings for Lunch or Dinner</h2>
     <p>The Garden is available for table bookings for Lunch or Dinner.</p>
     <p>Please ring  for table bookings on  (03) 9568 1486</p>
@@ -35,26 +59,33 @@
     </ul>
     <div id="formDiv">
       <form id="carForm" onsubmit="store()">
-          <h1>Booking for event</h1>
+          <h1>Booking Form for event</h1>
           <label for="contatname" >Contact name</label>
           <input type="text" id="name" placeholder="Contact name" required autofocus><br>
           <label for="phoneno" >Phone Number</label>
           <input type="text" id="phone" placeholder="phone no" required><br>
           <label for="email" >Email</label>
-          <input type="text" id="email" placeholder="email" required><br>
+          <input type="text" style="margin-left: 80px;" id="email" placeholder="email" required><br>
 
           <label for="contatname" >Number of people</label>
-          <input type="text" id="people" placeholder="No of people" required autofocus><br>
+          <input type="number" id="people" placeholder="No of people" required autofocus><br>
           <label for="phoneno" >Bar Service </label>
-          <select name="bar" id="bar">
+          <select style="height: auto;width: auto;margin-left: 50px;" name="bar" id="bar">
             <option value="yes">yes</option>
             <option value="no">no</option>
           </select>
       <br>
-          <label for="time" >Time : lunch or dinner</label>
-          <input type="text" id="date" placeholder="date" required><br>
-          <button type="submit">Store Records</button>
+          <label for="time" >Date : lunch or dinner</label>
+          <input type="date" id="date" placeholder="date" required><br>
+          <div style="align-items: center;margin-left: 120px;">
+            <button style="height: 30px;width:50px;" type="submit">Book</button>
+        </div>   
       </form>
+      </div>
+      <div class="footer">
+        <p>Name :</p>
+        <p>Student id : </p>
+        <p>Link : </p>
       </div>
   </body>
   <script src="eventbooking.js"></script>

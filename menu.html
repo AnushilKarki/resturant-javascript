@@ -9,12 +9,25 @@
     <link rel="stylesheet" href="menu.css"/>
 </head>
 <body>
-    <div class="header">
-        <p class="logo">LOGO</p>
+    <!-- <div class="header">
+        <p class="logo">Garden Restaurant</p>    
+        <p class="logoside">TakeAway Menu</p>
+        <p class="logoside">Bookings</p>
+        <div class="options"></div>
         <div class="cart"><i class="fa-solid fa-cart-shopping">
             <p id="count">0</p>
         </i></div>
-    </div>
+    </div> -->
+
+    <table align="center" width="80%" style="margin-bottom: 30px;margin-top: 30px;">
+        <tr><td><a href="Home.html">Home</a></td>
+          <td><a href="About.html">About</a></td>
+          <td><a href="LunchMenu.html">Lunch Menu</a></td>
+          <td><a href="DinnerMenu.html">Dinner Menu</a></td>
+          <td><a href="menu.html">Take Away Menu</a></td>
+          <td><a href="Bookings.html">Bookings</a></td>
+          <td><a href="Gallery.html">Gallery</a></td>
+        </tr></table>
     <div class="container">
         <div id="root"></div>
         <div class="sidebar">
@@ -24,8 +37,19 @@
                 <h3>Total</h3>
                 <h2 id="total">$0.00</h2>
             </div>
+            <lable style="margin-bottom: 10px;">plz enter your Phone no</lable><br>
+          <form onsubmit="checkout()">
+            <input required id="phone" type="text" name="phone" placeholder="enter your phone no" style="margin-top: 10px;margin-bottom: 10px;"/>
+            <button type="submit">checkout</button>
+
+          </form>
         </div>
     </div>
+    <div class="footer">
+        <p>Name :</p>
+        <p>Student id : </p>
+        <p>Link : </p>
+      </div>
 </body>
 <script src="addtocart.js"></script>
 </html>
