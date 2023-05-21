@@ -24,7 +24,8 @@
           <td><a href="About.html">About</a></td>
           <td><a href="LunchMenu.html">Lunch Menu</a></td>
           <td><a href="DinnerMenu.html">Dinner Menu</a></td>
-          <td><a href="menu.html">Take Away Menu</a></td>
+          <!-- <td><a href="TakeAwayMenu.html">Take Away Menu</a></td> -->
+          <td><a href="menu.html">Take Away</a></td>
           <td><a href="Bookings.html">Bookings</a></td>
           <td><a href="Gallery.html">Gallery</a></td>
         </tr></table>
@@ -32,6 +33,9 @@
         <div id="root"></div>
         <div class="sidebar">
             <div class="head"><p>My cart</p></div>
+            <form onsubmit="clearcart()">
+                <button type='submit' style='width:35%;'>clear cart</button>
+                </form>
             <div id="cart">your cart is empty</div>
             <div class="foot">
                 <h3>Total</h3>
@@ -43,6 +47,17 @@
             <button type="submit">checkout</button>
 
           </form>
+          <!-- latest cart --><div class="foot"></div>
+          <h2 id="">YOur latest order :</h2><br>
+          <form onsubmit="clearorder()">
+            <!-- click this buttom to complete order -->
+          <button type='submit' style='width:35%;'>complete order</button>
+          </form>
+          <div id="latestcart">your order is empty</div>
+          <div class="foot">
+              <h3>Total</h3>
+              <h2 id="latesttotal">$0.00</h2>
+          </div>
         </div>
     </div>
     <div class="footer">

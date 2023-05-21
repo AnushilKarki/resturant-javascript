@@ -134,64 +134,168 @@ return (`
     </div>
     <div class='bottom'>
     <p>${title}</p>
-    <h2>${price}.00</h2>
+    <h2>$ ${price}</h2>
     `+
     "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+`</div></div>`
 )
 }).join('')
 
 var cart = [];
+function completeorder(){
+    window.localStorage.removeItem(order);
+    displaycart();
+}
 function checkout(){
-    // window.localStorage.setItem('cart',JSON.stringify(cart)); 
+    // When you use setItem it overwrites the item which was there before it. 
+    // You need to use getItem to retrieve the old list, append to it, then 
+    // save it back to localStorage:
+
     var phone = document.getElementById('phone').value;
     window.localStorage.setItem('customer_contact',JSON.stringify(phone));
-    window.alert('Thank you for ordering :)');
+    window.localStorage.setItem('cart',JSON.stringify(cart));
+    var orderedcart = JSON.parse(window.localStorage.getItem('order'));
+    
+    if(orderedcart == null){
+        orderedcart = [];
+        window.localStorage.setItem('order',JSON.stringify(orderedcart));
+    } 
+
+    // console.log(storedcart);
+    // if(cart.length == 0){
+    //     window.localStorage.setItem('cart',JSON.stringify(cart));
+    // }
+    // else {
+        var storedcart = JSON.parse(window.localStorage.getItem('order'));
+        // if(storedcart ){
+            storedcart.forEach(myFunction)
+
+            function myFunction(item) {
+            //   arr[index] = item * 10;
+            cart.push(item);
+        }
+       
+        // window.localStorage.setItem('cart',JSON.stringify(cart));
+        window.localStorage.setItem('order',JSON.stringify(cart));
+        window.localStorage.removeItem('cart');
+        // } 
+    
+
     displaycart();
+    // latestcart();
 }
 function addtocart(a){
     // push into cart array
     cart.push(categories[a]);
-    console.log(cart);
-
+    window.localStorage.setItem('cart',JSON.stringify(cart));
+    // use totacart value
+  
    //set local storage for cart 
-    window.localStorage.setItem('cart',JSON.stringify(cart)); 
+ 
+    displaycart();
+}
+function clearorder(){
+    // clear all order data
+    localStorage.removeItem('order');
+    localStorage.removeItem('totalorder');
+    localStorage.removeItem('customer_contact');
+    window.alert('Thank you for ordering :)');
     displaycart();
 }
 function clearcart(){
-    localStorage.removeItem(cart);
-    localStorage.removeItem(customer_contact);
+    // clear all cart data
+    window.localStorage.removeItem('cart');
+
+    localStorage.removeItem('totalcart');
+    displaycart();
+    // latestcart();
 }
 function delElement(a){
     //reduce item from cart
     cart.splice(a,1);
     // set local storage for cart
-    window.localStorage.setItem('cart',JSON.stringify(cart)); 
+    // window.localStorage.setItem('cart',JSON.stringify(cart)); 
     displaycart();
 }
 
 function displaycart(a){
     let j=0, total=0;
-    //ckeck if cart is empty or not and apply logic accordingly
+    //ckeck if cart is empty or not 
     if(cart.length==0){
         document.getElementById('cart').innerHTML='cart is empty';
         document.getElementById('total').innerHTML = "$ "+0+".00";
+        // latestcart();
     }
     else {
         document.getElementById('cart').innerHTML = cart.map((items)=>{
             var { title,description,price} = items;
             total=total+price;
-            document.getElementById("total").innerHTML = "$ "+total+".00";
+            document.getElementById("total").innerHTML = "$ "+total+"";
             return (`
             <div class="cart-item">
             <div class="row-img">
               <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
             </div>
             <p style='font-size:12px;'>${title}</p>
-            <h2 style='font-size:15px;'>${price}.00</h2>
+            <h2 style='font-size:15px;'>$ ${price}</h2>
             `+
              "<button onclick='delElement("+(j++)+")' style='width:30%;'>Remove</button></div>"
             )
         }).join('');
-    }
+        window.localStorage.setItem('totalcart',JSON.stringify(total));
+        let k=0, totalorder=0;
+        // const records = window.localStorage.getItem(cart);
+            // localStorage.setItem('order',JSON.stringify());
+            // localStorage.setItem('totalorder',JSON.stringify([]));
+            const latestcartorder=JSON.parse(localStorage.getItem('order'));
+            const latest = [...new Set(latestcartorder.map((latest)=>{
+                return latest
+             }))]
 
+             document.getElementById('latestcart').innerHTML = latest.map((items)=>{
+                var { title,description,price} = items;
+                totalorder=totalorder+price;
+                document.getElementById("latesttotal").innerHTML = "$ "+totalorder+"";
+                return (`
+                <div class="cart-item">
+                <div class="row-img">
+                  <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
+                </div>
+                <p style='font-size:12px;'>${title}</p>
+                <h2 style='font-size:15px;'>$ ${price}</h2>
+                `+
+                 "<button onclick='delElement("+(k++)+")' style='width:30%;'>Remove</button></div>"
+                )
+            }).join('');
+            window.localStorage.setItem('totalorder',JSON.stringify(totalorder));
+        
+      
+        //  console.log(latest); 
+        
+        // latestcart();
+    }
+    // latestcart();
+
+}
+function latestcart(){
+    let j=0, total=0;
+     const latestcart=JSON.parse(window.localStorage.getItem('cart'));
+     const latest = [...new Set(latestcart.map((latestcart)=>{
+    return latestcart
+ }))]
+      console.log(latest); 
+        document.getElementById('latestcart').innerHTML = latest.map((items)=>{
+            var { title,description,price} = items;
+            total=total+price;
+            document.getElementById("latesttotal").innerHTML = "$ "+total+"";
+            return (`
+            <div class="cart-item">
+            <div class="row-img">
+              <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
+            </div>
+            <p style='font-size:12px;'>${title}</p>
+            <h2 style='font-size:15px;'>$ ${price}</h2>
+            `+
+             "<button onclick='delElement("+(j++)+")' style='width:30%;'>Remove</button></div>"
+            )
+        }).join('');
 }

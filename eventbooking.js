@@ -19,9 +19,32 @@ function store(){ //stores items in the localStorage
     eventarray.push(event);
 console.log(eventarray);
     window.localStorage.setItem('event',JSON.stringify(eventarray));  
-    window.alert('event booked successfullt');
+    latest();
+    // window.alert('event booked successfullt');
     //converting object to string
 }
 function clearevent(){
     localStorage.removeItem('event');
+}
+
+function latest(){
+    let j=0, total=0;
+     const lat=JSON.parse(window.localStorage.getItem('event'));
+     const latest = [...new Set(lat.map((latestcart)=>{
+    return latestcart
+ }))]
+      console.log(latest); 
+        document.getElementById('event').innerHTML = latest.map((items)=>{
+            var { name,phone} = items;
+            return (`
+            <div class="cart-item">
+            <div class="row-img">
+              <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
+            </div>
+            <p style='font-size:12px;'>${name}</p>
+            <h2 style='font-size:15px;'>$ ${phone}</h2>
+            `+
+             "<button onclick='delElement("+(j++)+")' style='width:30%;'>Remove</button></div>"
+            )
+        }).join('');
 }
