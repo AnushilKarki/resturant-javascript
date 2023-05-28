@@ -17,34 +17,34 @@ function store(){ //stores items in the localStorage
         date:date,
     }
     eventarray.push(event);
-console.log(eventarray);
-    window.localStorage.setItem('event',JSON.stringify(eventarray));  
-    latest();
+    window.localStorage.setItem('event',JSON.stringify(eventarray)); 
+    latestitem(); 
     // window.alert('event booked successfullt');
     //converting object to string
 }
 function clearevent(){
     localStorage.removeItem('event');
+    latestitem(); 
 }
-
-function latest(){
-    let j=0, total=0;
+function latestitem(){
+    let j=0;
      const lat=JSON.parse(window.localStorage.getItem('event'));
-     const latest = [...new Set(lat.map((latestcart)=>{
-    return latestcart
- }))]
-      console.log(latest); 
-        document.getElementById('event').innerHTML = latest.map((items)=>{
-            var { name,phone} = items;
+//      const latest = [...new Set(lat.map((latestcart)=>{
+//     return latestcart
+//  }))]
+      console.log(lat); 
+        document.getElementById('event').innerHTML = lat.map((items)=>{
+            var { name,phone,email,people,bar,date} = items;
             return (`
             <div class="cart-item">
-            <div class="row-img">
-              <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
-            </div>
-            <p style='font-size:12px;'>${name}</p>
-            <h2 style='font-size:15px;'>$ ${phone}</h2>
-            `+
-             "<button onclick='delElement("+(j++)+")' style='width:30%;'>Remove</button></div>"
+            <h1 style='font-size:18px;'>Event booked Successfully : </h1>
+            <h2 style='font-size:12px;'>Name : ${name}</h2>
+            <h2 style='font-size:15px;'>Phone : ${phone}</h2>
+            <h2 style='font-size:15px;'>Email :  ${email}</h2>
+            <h2 style='font-size:15px;'>No of people :  ${people}</h2>
+            <h2 style='font-size:15px;'>Bar :  ${bar}</h2>
+            <h2 style='font-size:15px;'>Date :  ${date}</h2>
+            `
             )
         }).join('');
 }

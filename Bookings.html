@@ -57,12 +57,11 @@
       <li>Time: Lunch or Dinner</li>
       <li>If possible, 3 dates that would be acceptable.</li>
     </ul>
-<div id="">
-<div>Event booked details</div>
-<div id="event"></div>
+<div id="event">
+<div id="event">Event booked details</div>
 </div>
     <div id="formDiv">
-      <form id="carForm" onsubmit="store()">
+      <!-- <form id="carForm" onsubmit="store()"> -->
           <h1>Booking Form for event</h1>
           <label for="contatname" >Contact name</label>
           <input type="text" id="name" placeholder="Contact name" required autofocus><br>
@@ -82,9 +81,9 @@
           <label for="time" >Date : lunch or dinner</label>
           <input type="date" id="date" placeholder="date" required><br>
           <div style="align-items: center;margin-left: 120px;">
-            <button style="height: 30px;width:50px;" type="submit">Book</button>
+            <button style="height: 30px;width:50px;" onClick="store()" type="submit">Book</button>
         </div>   
-      </form>
+      <!-- </form> -->
       </div>
       <div class="footer">
         <p>Name :</p>
@@ -92,5 +91,6 @@
         <p>Link : </p>
       </div>
   </body>
+
   <script src="eventbooking.js"></script>
 </html>
