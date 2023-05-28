@@ -3,21 +3,37 @@
   <head>
     <title>Garden Indian Restaurant</title>
     <style>
+      #content {
+        display: flex;
+        align-items: center;
+      }
+      #event {
+        margin-right: 30px;
+      }
+      #bookingform {
+        margin-left: 30px;
+      }
         #formDiv {
-      display:flex;
-      align-items:center;
-      width: 100%;
+
+      width: 50%;
       height:50%;
-      justify-content: center;
-      border-radius: 2px;
-      border: 1px solid blue;
+
       padding-bottom: 20px;
     }
+    .inputdata {
+      display: flex;
+      justify-content: center;
+    }
+    label {
+      margin-left: 10px;
+    }
     input {
-      height: 30px;
+      height: 20px;
       width:150px;
+      margin-left: 10px;
       margin-bottom: 5px;
-      margin-top: 5px;
+      border-radius: 2px;
+     
 
     }
     .footer{
@@ -39,7 +55,53 @@
         <td><a href="Bookings.html">Bookings</a></td>
         <td><a href="Gallery.html">Gallery</a></td>
       </tr></table>
-    <h2  align="center">Table Bookings for Lunch or Dinner</h2>
+   
+    <div id="content">
+
+    <div id="formDiv">
+      <!-- <form id="carForm"> -->
+          <h1 style="text-align: center;">Booking Form for event</h1>
+          <div class="inputdata">
+            <label for="contatname" >Contact name</label>
+            <input type="text" id="name" placeholder="Contact name" required autofocus><br>
+          
+          </div>
+         <div class="inputdata">
+          <label for="phoneno" >Phone Number</label>
+          <input type="text" id="phone" placeholder="phone no" required><br>
+        </div>
+         <div class="inputdata">
+          <label for="email" >Email</label>
+          <input type="text" style="margin-left: 80px;" id="email" placeholder="email" required><br>
+</div>
+<div class="inputdata">
+          <label for="contatname" >Number of people</label>
+          <input type="number" id="people" placeholder="No of people" required autofocus><br>
+         </div>
+         <div class="inputdata">
+          <label for="phoneno" >Bar Service </label>
+          <select style="height: auto;width: auto;margin-left: 50px;" name="bar" id="bar">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+          </select>
+      <br>
+    </div>
+    <div class="inputdata">
+          <label for="time" >Date : lunch or dinner</label>
+          <input type="date" id="date" placeholder="date" required><br>
+          </div>
+          <div class="inputdata">
+          <div style="align-items: center;margin-left: 120px;">
+            <button style="height: 30px;width:50px;" onClick="store()" type="submit">Book</button>
+        </div>  
+      </div> 
+      <!-- </form> -->
+      </div>
+      <div id="event">
+      </div>
+    </div>
+    <div class="instruction">
+       <h2  align="center">Table Bookings for Lunch or Dinner</h2>
     <p>The Garden is available for table bookings for Lunch or Dinner.</p>
     <p>Please ring  for table bookings on  (03) 9568 1486</p>
     <p>The Garden is licensed, but patrons can bring wine only.</p>
@@ -57,34 +119,7 @@
       <li>Time: Lunch or Dinner</li>
       <li>If possible, 3 dates that would be acceptable.</li>
     </ul>
-<div id="event">
-<div id="event">Event booked details</div>
-</div>
-    <div id="formDiv">
-      <!-- <form id="carForm" onsubmit="store()"> -->
-          <h1>Booking Form for event</h1>
-          <label for="contatname" >Contact name</label>
-          <input type="text" id="name" placeholder="Contact name" required autofocus><br>
-          <label for="phoneno" >Phone Number</label>
-          <input type="text" id="phone" placeholder="phone no" required><br>
-          <label for="email" >Email</label>
-          <input type="text" style="margin-left: 80px;" id="email" placeholder="email" required><br>
-
-          <label for="contatname" >Number of people</label>
-          <input type="number" id="people" placeholder="No of people" required autofocus><br>
-          <label for="phoneno" >Bar Service </label>
-          <select style="height: auto;width: auto;margin-left: 50px;" name="bar" id="bar">
-            <option value="yes">yes</option>
-            <option value="no">no</option>
-          </select>
-      <br>
-          <label for="time" >Date : lunch or dinner</label>
-          <input type="date" id="date" placeholder="date" required><br>
-          <div style="align-items: center;margin-left: 120px;">
-            <button style="height: 30px;width:50px;" onClick="store()" type="submit">Book</button>
-        </div>   
-      <!-- </form> -->
-      </div>
+    </div>
       <div class="footer">
         <p>Name :</p>
         <p>Student id : </p>
