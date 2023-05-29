@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
+    
     <title>Garden Indian Restaurant</title>
     <style>
       #content {
@@ -44,22 +45,24 @@
     </style>
   </head>
   <body>
-    <h1 align="center">Bookings</h1>
-    <p align="center"><img src="TheGardenLarge.jpg" height="400px"></p>
-    <table align="center" width="80%">
+   
+   
+    <table align="center" width="80%" style="margin-bottom: 30px;margin-top: 30px;">
       <tr><td><a href="Home.html">Home</a></td>
         <td><a href="About.html">About</a></td>
         <td><a href="LunchMenu.html">Lunch Menu</a></td>
         <td><a href="DinnerMenu.html">Dinner Menu</a></td>
-        <td><a href="menu.html">Take Away Menu</a></td>
+        <td><a href="TakeAwayMenu.html">Take Away Menu</a></td>
+        <td><a href="menu.html">Take Away order</a></td>
         <td><a href="Bookings.html">Bookings</a></td>
         <td><a href="Gallery.html">Gallery</a></td>
       </tr></table>
-   
+      <h1 align="center">Bookings</h1>
+      <p align="center"><img src="TheGardenLarge.jpg" height="400px"></p>
     <div id="content">
 
-    <div id="formDiv">
-      <!-- <form id="carForm"> -->
+    <div id="formDiv" style="display:flex;flex-direction:column;">
+
           <h1 style="text-align: center;">Booking Form for event</h1>
           <div class="inputdata">
             <label for="contatname" >Contact name</label>
@@ -95,7 +98,7 @@
             <button style="height: 30px;width:50px;" onClick="store()" type="submit">Book</button>
         </div>  
       </div> 
-      <!-- </form> -->
+
       </div>
       <div id="event">
       </div>
