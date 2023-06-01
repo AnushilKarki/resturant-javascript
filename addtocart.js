@@ -3,7 +3,7 @@ const item = [
     {
         id:0,
         category:'Entrée',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-samosas.jpg',
+        image:'images/vegetable-samosas.jpg',
         title:'Vegetable samosa',
         description:'Deep fried pastry stuffed with lightly spiced potatoes and green peas',
         price:7.50,
@@ -11,7 +11,7 @@ const item = [
     {
         id:1,
         category:'Entrée',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/onion.jpg',
+        image:'images/onion.jpg',
         title:'Onion Bhaji ',
         description:'Coriander flavoured onion fritters',
         price:7.50,
@@ -19,7 +19,7 @@ const item = [
     {
         id:2,
         category:'Entrée',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/hara-bhara-kebab.jpg',
+        image:'images/hara-bhara-kebab.jpg',
         title:'Hara Bhara kebab',
         description:'Shallow fried vegetable and spinach patties',
         price:12,
@@ -27,7 +27,7 @@ const item = [
     {
         id:3,
         category:'Entrée',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chicken-tikka-masala.jpg',
+        image:'images/chicken-tikka-masala.jpg',
         title:'Chicken tikka',
         description:'Boneless marinated chicken grilled in tandoo',
         price:11,
@@ -35,7 +35,7 @@ const item = [
     {
         id:4,
         category:'Entrée',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/seekh.jpg',
+        image:'images/seekh.jpg',
         title:'Seekh kebab',
         description:'Spiced and skewed lamb mince cooked in tandoor',
         price:10,
@@ -43,7 +43,7 @@ const item = [
     {
         id:5,
         category:'chicken',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chicken-tikka-masala.jpg',
+        image:'images/chicken-tikka-masala.jpg',
         title:'Chicken Tikka Masala (medium) ',
         description:'Unique combination of spices cooked with onion, capsicum and tomato',
         price:18,
@@ -51,7 +51,7 @@ const item = [
     {
         id:6,
         category:'chicken',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chickenbalti.jpg',
+        image:'images/chickenbalti.jpg',
         title:'Chicken Balti (medium)',
         description:'Boneless chicken cooked in medium spiced sauce with onion, capsicum and tomat',
         price:18,
@@ -59,7 +59,7 @@ const item = [
     {
         id:7,
         category:'chicken',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chickenkorma.jpg',
+        image:'images/chickenkorma.jpg',
         title:'Chicken Korma (mild)',
         description:'Chicken cooked in creamy cashew nut gravy',
         price:18,
@@ -67,7 +67,7 @@ const item = [
     {
         id:8,
         category:'chicken',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chickenkadai.jpg',
+        image:'images/chickenkadai.jpg',
         title:'Kadai Chicken (medium)',
         description:'Chicken cooked in kadai gravy',
         price:18,
@@ -75,7 +75,7 @@ const item = [
     {
         id:9,
         category:'chicken',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chicken-vindaloo.jpg',
+        image:'images/chicken-vindaloo.jpg',
         title:'Chicken Vindaloo (HOT)',
         description:'Spicy curry prepared in goan style',
         price:18,
@@ -83,7 +83,7 @@ const item = [
     {
         id:10,
         category:'chicken',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/chickenmysore.jpg',
+        image:'images/chickenmysore.jpg',
         title:'Mysore Chicken (HOT)',
         description:'Chicken cooked with fresh chillies in coconut creamy sauce',
         price:18,
@@ -91,7 +91,7 @@ const item = [
     {
         id:11,
         category:'lamb',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/lamb-rogan-josh.jpg',
+        image:'images/lamb-rogan-josh.jpg',
         title:'Lamb Rogan Josh (medium)',
         description:'Lamb cooked in traditional north Indian style',
         price:19,
@@ -99,7 +99,7 @@ const item = [
     {
         id:12,
         category:'lamb',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/lamb-madras.jpg',
+        image:'images/lamb-madras.jpg',
         title:'Lamb Korma (mild)',
         description:'Blend of creamy cashew nut gravy cooked with lamb',
         price:19,
@@ -107,7 +107,7 @@ const item = [
     {
         id:13,
         category:'lamb',
-        image:'/home/anudhil/Desktop/work_from_home/Restaurant/images/lamb-madras.jpg',
+        image:'images/lamb-madras.jpg',
         title:'Lamb Madras (medium)',
         description:'Creamy coconut based delicacy cooked to perfection',
         price:19,
@@ -251,7 +251,7 @@ function displaycart(a){
                 return (`
                 <div class="cart-item">
                 <div class="row-img">
-                  <img class='rowing' src="/home/anudhil/Desktop/work_from_home/Restaurant/images/vegetable-jalfrezi.jpg">
+                  <img class='rowing' src="images/vegetable-jalfrezi.jpg">
                 </div>
                 <p style='font-size:12px;'>${title}</p>
                 <h2 style='font-size:15px;'>$ ${price}</h2>

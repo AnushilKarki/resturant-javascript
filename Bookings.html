@@ -3,6 +3,7 @@
   <head>
     
     <title>Garden Indian Restaurant</title>
+    <link rel="stylesheet" href="style.css">
     <style>
       #content {
         display: flex;
@@ -29,7 +30,7 @@
       margin-left: 10px;
       margin-right: 10px;
     }
-    input {
+    /* input {
       height: 20px;
       width:150px;
       margin-left: 30px;
@@ -37,22 +38,14 @@
       border-radius: 2px;
      
 
-    }
+    } */
     .footer{
       display: flex;
       align-items: center;
       justify-content: space-around;
     }
     
-    input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+   
 
 input[type=submit] {
   width: 100%;
@@ -79,47 +72,61 @@ input[type=submit]:hover {
   <body>
    
    
-    <table align="center" width="80%" style="margin-bottom: 30px;margin-top: 30px;">
-      <tr><td><a href="Home.html">Home</a></td>
-        <td><a href="About.html">About</a></td>
-        <td><a href="LunchMenu.html">Lunch Menu</a></td>
-        <td><a href="DinnerMenu.html">Dinner Menu</a></td>
-        <td><a href="TakeAwayMenu.html">Take Away Menu</a></td>
-        <td><a href="menu.html">Take Away order</a></td>
-        <td><a href="Bookings.html">Bookings</a></td>
-        <td><a href="Gallery.html">Gallery</a></td>
-      </tr></table>
-      <h1 align="center">Bookings</h1>
-      <p align="center"><img src="TheGardenLarge.jpg" height="400px"></p>
+    <header>
+      <div id="header-inner">
+        <a href="#" id="logo">Garden Indian</a>
+        <nav>
+          <a href="#" id="menu-icon"></a>
+            <ul>
+               <li><a href="Home.html" class="current">Home</a></li>
+               <li><a href="About.html">About</a></li>
+               <li><a href="LunchMenu.html">Lunch Menu</a></li>
+               <li><a href="DinnerMenu.html">Dinner Menu</a></li>
+               <li><a href="TakeAwayMenu.html">Take Away Menu</a></li>
+               <li><a href="menu.html">Take Away Order</a></li>
+               <li><a href="Bookings.html">Bookings</a></li>
+               <li><a href="Gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header> 
+    <section class="banner">
+      <div class="banner-inner">
+        <img src="TheGardenLarge.jpg">
+      </div>
+    </section>
+    <section class="main-body">
+      <h2 >Bookings</h2>
 
-<div class="form">
-  <h2  align="center">Table Bookings for Lunch or Dinner</h2>
-    <label for="contatname" >Contact name</label>
-    <input type="text" id="name" placeholder="Contact name" required autofocus><br>
+      <div class="form">
+        <h2  align="center">Table Bookings for Lunch or Dinner</h2>
+          <label for="contatname" >Contact name</label>
+          <input type="text" id="name" placeholder="Contact name" required autofocus><br>
+      
+          <label for="phoneno" >Phone Number</label>
+          <input type="text" id="phone" placeholder="phone no" required><br>
+      
+          <label for="email" >Email</label>
+          <input type="text" id="email" placeholder="email" required><br>
+      
+          <label for="contatname" >Number of people</label>
+          <input type="number" id="people" placeholder="No of people" required autofocus><br>
+      
+          <label for="phoneno" >Bar Service </label>
+          <select name="bar" id="bar">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+          </select>
+          <label for="time" >Date : lunch or dinner</label>
+          <input type="date" id="date" placeholder="date" required><br>
+      
+        
+          <button onClick="store()" type="submit">Book</button>
+        
 
-    <label for="phoneno" >Phone Number</label>
-    <input type="text" id="phone" placeholder="phone no" required><br>
+        
+      </div>
 
-    <label for="email" >Email</label>
-    <input type="text" id="email" placeholder="email" required><br>
-
-    <label for="contatname" >Number of people</label>
-    <input type="number" id="people" placeholder="No of people" required autofocus><br>
-
-    <label for="phoneno" >Bar Service </label>
-    <select name="bar" id="bar">
-      <option value="yes">yes</option>
-      <option value="no">no</option>
-    </select>
-    <label for="time" >Date : lunch or dinner</label>
-    <input type="date" id="date" placeholder="date" required><br>
-
-  
-    <button onClick="store()" type="submit">Book</button>
-  </form>
-</div>
-
- 
       <div id="event" class="form">
       </div>
     </div>
@@ -133,7 +140,7 @@ input[type=submit]:hover {
     <p>The Garden caters for group bookings of upto 30 people.</p>
     <p>For large group bookings please send email to <kbd>thegarden@c-link.com.au</kbd></p>
     <p>Your email must contain the following information:</p>
-    <ul>
+    <ul style="text-align: center;">
       <li>Contact Name</li>
       <li>Contact phone number</li>
       <li>Contact email</li>
@@ -143,11 +150,20 @@ input[type=submit]:hover {
       <li>If possible, 3 dates that would be acceptable.</li>
     </ul>
     </div>
-      <div class="footer">
+      <div class="footer" style="background-color: #fff; margin-top: 10px; padding: 10px;">
         <p>Name :</p>
         <p>Student id : </p>
         <p>Link : </p>
       </div>
+
+    </section>
+      
+      
+
+
+
+ 
+
   </body>
 
   <script src="eventbooking.js"></script>

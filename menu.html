@@ -7,6 +7,7 @@
     <title>Menu</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
     <link rel="stylesheet" href="menu.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <!-- <div class="header">
@@ -18,54 +19,67 @@
             <p id="count">0</p>
         </i></div>
     </div> -->
-
-    <table align="center" width="80%" style="margin-bottom: 30px;margin-top: 30px;">
-        <table align="center" width="80%" style="margin-bottom: 30px;margin-top: 30px;">
-            <tr><td><a href="Home.html">Home</a></td>
-              <td><a href="About.html">About</a></td>
-              <td><a href="LunchMenu.html">Lunch Menu</a></td>
-              <td><a href="DinnerMenu.html">Dinner Menu</a></td>
-              <td><a href="TakeAwayMenu.html">Take Away Menu</a></td>
-              <td><a href="menu.html">Take Away order</a></td>
-              <td><a href="Bookings.html">Bookings</a></td>
-              <td><a href="Gallery.html">Gallery</a></td>
-            </tr></table>
-    <div class="container">
-        <div id="root"></div>
-        <div class="sidebar">
-            <div class="head"><p>My cart</p></div>
-            <form onsubmit="clearcart()">
-                <button type='submit' style='width:35%;'>clear cart</button>
-                </form>
-            <div id="cart">your cart is empty</div>
-            <div class="foot">
-                <h3>Total</h3>
-                <h2 id="total">$0.00</h2>
-            </div>
-            <lable style="margin-bottom: 10px;">plz enter your Phone no</lable><br>
-          <form onsubmit="checkout()">
-            <input required id="phone" type="text" name="phone" placeholder="enter your phone no" style="margin-top: 10px;margin-bottom: 10px;"/>
-            <button type="submit">checkout</button>
-
-          </form>
-          <!-- latest cart --><div class="foot"></div>
-          <h2 id="">YOur latest order :</h2><br>
-          <form onsubmit="clearorder()">
-            <!-- click this buttom to complete order -->
-          <button type='submit' style='width:35%;'>complete order</button>
-          </form>
-          <div id="latestcart">your order is empty</div>
-          <div class="foot">
-              <h3>Total</h3>
-              <h2 id="latesttotal">$0.00</h2>
-          </div>
+    <header>
+        <div id="header-inner">
+          <a href="#" id="logo">Garden Indian</a>
+          <nav>
+            <a href="#" id="menu-icon"></a>
+              <ul>
+                 <li><a href="Home.html" class="current">Home</a></li>
+                 <li><a href="About.html">About</a></li>
+                 <li><a href="LunchMenu.html">Lunch Menu</a></li>
+                 <li><a href="DinnerMenu.html">Dinner Menu</a></li>
+                 <li><a href="TakeAwayMenu.html">Take Away Menu</a></li>
+                 <li><a href="menu.html">Take Away Order</a></li>
+                 <li><a href="Bookings.html">Bookings</a></li>
+                 <li><a href="Gallery.html">Gallery</a></li>
+              </ul>
+          </nav>
         </div>
+      </header> 
+    <div class="menu-body">
+        <div class="container">
+            <div id="root"></div>
+            <div class="sidebar">
+                <div class="head"><p>My cart</p></div>
+                <form onsubmit="clearcart()">
+                    <button type='submit' style='width:35%;'>clear cart</button>
+                    </form>
+                <div id="cart">your cart is empty</div>
+                <div class="foot">
+                    <h3>Total</h3>
+                    <h2 id="total">$0.00</h2>
+                </div>
+                <lable style="margin-bottom: 10px;">plz enter your Phone no</lable><br>
+              <form onsubmit="checkout()">
+                <input required id="phone" type="text" name="phone" placeholder="enter your phone no" style="margin-top: 10px;margin-bottom: 10px;"/>
+                <button type="submit">checkout</button>
+    
+              </form>
+              <!-- latest cart --><div class="foot"></div>
+              <h2 id="">Your latest order :</h2><br>
+              <form onsubmit="clearorder()">
+                <!-- click this buttom to complete order -->
+              <button type='submit' style='width:35%;'>complete order</button>
+              </form>
+              <div id="latestcart">your order is empty</div>
+              <div class="foot">
+                  <h3>Total</h3>
+                  <h2 id="latesttotal">$0.00</h2>
+              </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Name :</p>
+            <p>Student id : </p>
+            <p>Link : </p>
+          </div>
     </div>
-    <div class="footer">
-        <p>Name :</p>
-        <p>Student id : </p>
-        <p>Link : </p>
-      </div>
+    
+
+      <footer class="second">
+        <p>&copy; Garden Indian Restaurant</p>
+      </footer>
 </body>
 <script src="addtocart.js"></script>
 </html>

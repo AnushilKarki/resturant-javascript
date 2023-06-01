@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  body {
+    background-color:#F5F5F5;
+    color: 67727A;
+    
+    margin: 0;
+  }
+  h2 {
+    font-size: 180%;
+    font-weight: 700px;
+    text-align: center;
+    padding-top: 2%
+  }
+  h3 {
+    font-size: 175%;
+    line-height: 155%;
+    padding: 5% 0;
+  }
+  p {
+    font-size: 110%;
+    line-height: 150%;
+    padding: 1%;
+    text-indent: 2%;
+    text-align: justify;
+    color: #F5F5F5;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    margin-bottom: -4px;
+  }
+  input[type=text],input[type=number],input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  header {
+    background-color: #6991AC;
+    width: 100%;
+    height: 86px;
+  }
+  #header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #logo {
+    margin: 20px;
+    float: left;
+    width: 320px;
+    height: 45px;
+    color:#fff;
+    font-size: 36px;
+    text-decoration: none;
+    
+  }
+  /*---start navigation---*/
+  nav {
+    float: right;
+    padding: 25px 20px 0 0;
+  }
+  #menu-icon {
+    display: hidden;
+    width: 40px;
+    height: 40px;
+    background: url(https://res.cloudinary.com/dgpmuegqe/image/upload/v1492571257/nav_xe79ju.png) center;
+  }
+  a:hover#menu-icon {
+    border-radius: 4px 4px 0 0;
+  }
+  ul {
+    list-style-type: none;
+  }
+  nav ul li {
+    font-size: 150%;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+  }
+  nav ul li a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  nav ul li a:hover {
+    color: #C3D7DF;
+  }
+  .current {
+    color: #C3D7DF;
+  }
+  /*---end of navigation---*/
+  .banner {
+    width: 100%;
+    background-color: #6991AC;
+  }
+  .banner-inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .banner-inner img{
+    width: 100%;
+    
+  }
+  .main-body{
+    background: #eee;
+    padding: 20px 60px;
+  }
+  .main-body p{
+    color:#000;
+    text-align: center;
+  }
+
+  /*--footer---*/
+  footer {
+    background-color: #6991AC;
+    width: 100%;
+  }
+  
+  /*--- begining of second footer---*/
+  footer.second {
+    border-top: 2px solid #AADCD2;
+    background-color: #544859;
+    max-height: 60px;
+  }
+  footer.second p{
+    text-align: center;
+  }
+  /*---media start----*/
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 150%;
+    }
+    h3 {
+      font-size: 125%;
+    }
+    p {
+      font-size: 110%;
+    }
+    header {
+      position: absolute;
+    }
+    #logo {
+      margin: 15px 0 20px 25px;
+      background: url(https://res.cloudinary.com/dgpmuegqe/image/upload/v1492571257/RD_mobile_sapd7z.png) no-repeat center;
+    }
+    #menu-icon {
+      display: inline-block;
+      }
+    nav ul, nav:active ul {
+      display: none;
+      z-index: 1000;
+      position: absolute;
+      background: #6991AC;
+      padding: 20px;
+      right: 20px;
+      top: 60px;
+      border: 1px solid #fff;
+      border-radius: 2px 0 2px 2px;
+      width: 50%;
+    }
+    nav:hover ul {
+      display: block;
+    }
+    nav li {
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+    }
+    .banner {
+      padding-top: 86px;
+    }
+    .one-fourth {
+      float: left;
+      width: 100%;
+    }
+    .one-fourth i {
+      font-size: 350%;
+      padding: 4% 0 1% 0;
+    }
+    article {
+      width: 100%;
+    }
+    aside {
+      width: 100%;
+    }
+    .hand-mobile {
+      display: none;
+    }
+    .one-third {
+      width: 100%;
+    }
+    .social i {
+      font-size: 180%;
+    }
+  }
+  
